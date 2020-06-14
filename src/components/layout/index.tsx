@@ -7,7 +7,7 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core";
-import CameraIcon from "@material-ui/icons/PhotoCamera";
+import CalendarToday from "@material-ui/icons/CalendarToday";
 import React from "react";
 import { convertToIcal } from "../../util/convertToIcal";
 import { CallToAction } from "../callToAction";
@@ -56,7 +56,7 @@ export const Layout = () => {
   const handleConfirmExport = () => {
     if (data) {
       const formatted = convertToIcal(data);
-      const file = new File([formatted], "export.csv", { type: "utf8" });
+      const file = new File([formatted], "export.ics", { type: "utf8" });
       const el = document.createElement("a");
       el.href = URL.createObjectURL(file);
       el.download = file.name;
@@ -83,7 +83,7 @@ export const Layout = () => {
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
-          <CameraIcon className={classes.icon} />
+          <CalendarToday className={classes.icon} />
           <Typography variant="h6" color="inherit" noWrap>
             Business Assistant
           </Typography>
