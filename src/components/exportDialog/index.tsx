@@ -22,9 +22,7 @@ export const ExportDialog = (props: Props) => {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
-          {"Use Google's location service?"}
-        </DialogTitle>
+        <DialogTitle id="alert-dialog-title">{"Exportera"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             Är du säker på att du vill exportera listan?
@@ -34,7 +32,14 @@ export const ExportDialog = (props: Props) => {
           <Button onClick={handleClose} color="primary">
             Avbryt
           </Button>
-          <Button onClick={handleConfirm} color="primary" autoFocus>
+          <Button
+            onClick={() => {
+              handleConfirm();
+              handleClose();
+            }}
+            color="primary"
+            autoFocus
+          >
             Exportera
           </Button>
         </DialogActions>

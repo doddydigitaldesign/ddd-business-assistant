@@ -1,5 +1,6 @@
 {
   "name": "ddd-business-assistant",
+  "description": "An open source program to help small business owners in Sweden with keeping track of important dates.",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://doddydigitaldesign.github.io/ddd-business-assistant",
@@ -13,6 +14,7 @@
     "@types/node": "^12.12.47",
     "@types/react": "^16.9.36",
     "@types/react-dom": "^16.9.8",
+    "@types/uuid": "^8.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",

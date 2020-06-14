@@ -67,7 +67,6 @@ export const Layout = () => {
 
   const handleConfirmImport = (e: string): void => {
     const json: ImportedJson = JSON.parse(e);
-    console.log("import confirmed:", json);
     const jsonToTableRows = json.Data.map((entry) => {
       const tableRow: TableRow = {
         date: entry.Date,
@@ -78,7 +77,6 @@ export const Layout = () => {
       return tableRow;
     });
     setData(jsonToTableRows);
-    setImportDialogOpen(false);
   };
   return (
     <React.Fragment>

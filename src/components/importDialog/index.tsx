@@ -6,6 +6,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import React, { useState } from "react";
+import { v4 as uuidV4 } from "uuid";
 
 interface Props {
   open: boolean;
@@ -15,7 +16,22 @@ interface Props {
 
 export const ImportDialog = (props: Props) => {
   const { handleClose, handleConfirm, open } = props;
-  const [textFieldValue, setTextFieldValue] = useState("");
+  const initialValue = `{
+      "Data":[
+        {
+          "Id":"${uuidV4()}",
+          "Date":"${new Date(Date.now()).toISOString()}",
+          "Status":"Completed",
+          "Title":"Du ska ha betalat in",
+          "Description":"Debiterad preliminärskatt",
+          "CategoryId":"${uuidV4()}",
+          "HiddenCategory":false,
+          "HiddenDate":false,
+          "State":"Completed"
+        }
+      ]
+    }`;
+  const [textFieldValue, setTextFieldValue] = useState(initialValue);
   return (
     <div>
       <Dialog
@@ -24,14 +40,13 @@ export const ImportDialog = (props: Props) => {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
-          {"Importera från Bokio"}
-        </DialogTitle>
+        <DialogTitle id="alert-dialog-title">{"Importera"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Kopiera ditt bolags "Viktiga datum" från Bokio och klistra in i
-            rutan.
+            Kopiera JSON-svaret för ditt bolags "Viktiga datum" från Bokio och
+            klistra in i rutan.
           </DialogContentText>
+
           <TextField
             id="bokio-todos"
             multiline
@@ -52,6 +67,8 @@ export const ImportDialog = (props: Props) => {
           <Button
             onClick={() => {
               handleConfirm(textFieldValue);
+              setTextFieldValue(initialValue);
+              handleClose();
             }}
             color="primary"
             autoFocus
