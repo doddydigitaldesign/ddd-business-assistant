@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/ddd-business-assistant/static/js/main.edb36f7d.chunk.js",
+    "main.js.map": "/ddd-business-assistant/static/js/main.edb36f7d.chunk.js.map",
+    "runtime-main.js": "/ddd-business-assistant/static/js/runtime-main.12b28a05.js",
+    "runtime-main.js.map": "/ddd-business-assistant/static/js/runtime-main.12b28a05.js.map",
+    "static/js/2.407b7804.chunk.js": "/ddd-business-assistant/static/js/2.407b7804.chunk.js",
+    "static/js/2.407b7804.chunk.js.map": "/ddd-business-assistant/static/js/2.407b7804.chunk.js.map",
+    "index.html": "/ddd-business-assistant/index.html",
+    "precache-manifest.5814be1c61d3ed9f84948283a2dd0578.js": "/ddd-business-assistant/precache-manifest.5814be1c61d3ed9f84948283a2dd0578.js",
+    "service-worker.js": "/ddd-business-assistant/service-worker.js",
+    "static/js/2.407b7804.chunk.js.LICENSE.txt": "/ddd-business-assistant/static/js/2.407b7804.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.12b28a05.js",
+    "static/js/2.407b7804.chunk.js",
+    "static/js/main.edb36f7d.chunk.js"
+  ]
+}
